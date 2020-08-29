@@ -1,0 +1,51 @@
+Alyxandra Spikerman
+Written for a course at Northeastern University: High Performance Computing
+
+Q1a.c
+
+This program takes in a number of values (N) and a number of classes (M) and creates a histogram with M classes with a total number of N values. It outputs the count for each class in ascending order. The values for N numbers are random between 1 and 1000.
+
+This version uses MPI tasks to split up the workload (N) evenly across nodes, where each node computes 1/# classes of the data values.
+
+
+--HOW TO COMPILE--
+mpicc -std=c99 Q1a.c -o Q1a
+
+OR
+
+make Q1a
+
+--HOW TO RUN--
+
+make run_Q1a
+
+OR
+
+mpirun Q1a
+
+
+
+Q1b.c
+
+This program takes in a number of values (N) and a number of classes (M) and creates a histogram
+with M classes with a total number of N values. It outputs the count for each class in ascending
+order. The values for N numbers are random between 1 and 1000.
+
+This version uses MPI tasks to compute the counts where each class is assigned to a task. Each task
+can compute the counts for multiple classes.
+
+
+--HOW TO COMPILE--
+mpicc -std=c99 Q1b.c -o Q1b
+
+OR
+
+make Q1b
+
+--HOW TO RUN--
+
+make run_Q1b
+
+OR
+
+mpirun Q1b
